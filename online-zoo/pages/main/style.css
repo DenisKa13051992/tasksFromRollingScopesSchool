@@ -136,6 +136,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: url(../../assets/images/flower_foto1.png) 100% 8%;
+    background-repeat: no-repeat;
+
 }
 .section2 {
     margin: 140px 220px 180px;
@@ -152,17 +155,121 @@ main {
     width: 552px;
     height: 403px;
     padding-left: 87px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    color: #333B41;
 }
 .bamboo_text h2 {
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
+
 font-size: 48px;
 line-height: 120%;
-color: #333B41;
 margin-top: 0;
 margin-bottom: 20px;
 width: 465px;
 height: 116px;
+}
+.bamboo_h {
+font-weight: 400;
+font-size: 24px;
+line-height: 120%;
+margin: 54px 0 34px 0;
 
+}
+.bamboo_dis{   
+    font-weight: 400;
+    font-size: 16px;
+    color: #333B41;
+}
+.dis1 {
+line-height: 130%;
+}
+.dis2 {
+line-height: 140%;
+}
+.flower_foto1{
+    width: 100%;
+}
+.section2_bgr_palm {
+    width: 100%;
+    height: 1829px;
+    background: url(../../assets/images/palm_foto.png) 0 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-start;
+}
+.section2_bgr_strelitzia {
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/images/strelitzia\ 1.png) 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section3 {
+    width: 1160px;
+    height: 872px;
+    display: grid;
+    grid-template-columns: repeat(3, 366px);
+    grid-template-rows: repeat(2, 426px);
+    grid-gap: 20px 30px;    
+}
+.foto-card_border {
+    border-radius: 5px;
+    background: linear-gradient(113.96deg, #FA6F32 1.49%, #FE9013 101.44%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.foto-card {
+    width: 364px;
+    height: 364px;
+    border-radius: 5px;
+}
+.foto-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.foto-card_info {
+    width: 364px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+}
+.upInf {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 140%;
+text-transform: uppercase;
+color: #000000;
+margin: 8px auto 4px 16px;
+
+
+}
+.smInf {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 15px;
+line-height: 120%;
+color: #000000;
+margin: 0 auto auto 16px;
+}
+.foto-card_info img {
+    width: 33px;
+    height: 29px;
+}
+.foto-card_info div {
+    display: flex;
+    flex-direction: column;
+}
+.foto-card_logo {
+    margin: 13px 12px auto auto;
 }
