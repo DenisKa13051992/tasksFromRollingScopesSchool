@@ -206,10 +206,21 @@ line-height: 140%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    }
+.sec3_but{
+    display: grid;
+    grid-template-columns: 1fr 1160px 1fr;
+    grid-template-rows: 872px 134px;
+    justify-content: center;
+    
 }
-.section3 {
+.sec3div {
     width: 1160px;
     height: 872px;
+}
+.section3 {
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 366px);
     grid-template-rows: repeat(2, 426px);
@@ -272,4 +283,34 @@ margin: 0 auto auto 16px;
 }
 .foto-card_logo {
     margin: 13px 12px auto auto;
+}
+.arrowLeft {
+    grid-row: 1/3;
+    padding-top: 403px;
+    padding-right: 20px;
+}
+.arrowRight {
+    padding-top: 403px;
+    padding-left: 20px;
+       
+}
+.btnChoose {
+    padding-left: 431px;
+    padding-top: 80px;
+}
+.section4 {
+    width: 100%;
+    height: 1004px;
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+opacity: 0.9;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.sec4_Info {
+    width: 1160px;
+    height: 835px;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
 }
