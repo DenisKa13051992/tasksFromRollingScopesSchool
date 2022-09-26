@@ -58,7 +58,7 @@ border-radius: 2px;
 .logo_footer_border h1 {
     position: absolute;
     top: 50%;
-    transform: translate(0, -70%);
+    transform: translate(0, -65%);
     height: 52px;
     text-align: center;
     text-decoration: none;
@@ -151,7 +151,7 @@ border-radius: 2px;
 .whatch{
 position: absolute;
 top: 50%;
-transform: translate(0%, -135%);
+transform: translate(0%, -140%);
 margin-top: 166px;
 height: 400px;
 width: 500px;
@@ -172,7 +172,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url(../../assets/images/flower_foto1.png) 100% 8%;
+    background: url(../../assets/images/flower_foto1.png) 100% 0.5%;
     background-repeat: no-repeat;
 
 }
@@ -196,8 +196,17 @@ main {
     font-weight: 400;
     color: #333B41;
 }
+.bamboo_text p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    color: #333B41;
+}
 .bamboo_text h2 {
-
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    color: #333B41;
 font-size: 48px;
 line-height: 120%;
 margin-top: 0;
