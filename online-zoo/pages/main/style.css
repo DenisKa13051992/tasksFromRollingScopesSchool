@@ -88,7 +88,7 @@ position: relative;
 
 .bgPanda {
     background-image: url(../../assets/images/Giant\ Panda.jpg);
-    height: 700px;
+    height: 780px;
     width: 100%;
     display: flex;
     background-size: cover;
@@ -313,4 +313,151 @@ align-items: center;
     background: rgba(253, 253, 255, 0.52);
     backdrop-filter: blur(2px);
     border-radius: 20px;
+}
+.sec4_InfoStr1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: #FE9013;
+    margin-bottom: 29px;
+}
+.sec4_InfoStr2{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+    padding-left: 99px;
+    margin-bottom: 40px;
+}
+.sec4_InfoStr3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333B41;
+    padding-left: 99px;
+    margin-bottom: 0;
+
+}
+.sec4_InfoStr4{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333B41;
+    padding-left: 99px;
+    margin-top: 10px;
+}
+.sec4_InfoStr5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: #333B41;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.logo1 {
+    grid-area: logo1;
+}
+.logo2 {
+    grid-area: logo2;
+}
+.logo3 {
+    grid-area: logo3;
+}
+.logoarr1 {
+    grid-area: logostr1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.logoarr2 {
+    grid-area: logostr2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logodiscr1, .logodiscr3, .logodiscr5 {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+color: #333B41;
+padding-top: 22px;
+
+}
+.logodiscr1 {
+    grid-area: logodiscr1;
+}
+.logodiscr2 {
+    grid-area: logodiscr2;
+}
+.logodiscr3 {
+    grid-area: logodiscr3;
+}
+.logodiscr4 {
+    grid-area: logodiscr4;
+}
+.logodiscr5 {
+    grid-area: logodiscr5;
+}
+.logoButn {
+    grid-area: logobutn;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.iconscontainer {
+    display: grid;
+    grid-template-columns: 168px 130px 168px 130px 168px;
+    grid-template-rows: 168px 76px 114px;
+    grid-template-areas:
+    "logo1 logostr1 logo2 logostr2 logo3"
+    "logodiscr1 logodiscr2 logodiscr3 logodiscr4 logodiscr5"
+    "logobutn logobutn logobutn logobutn logobutn"
+    ;
+    margin-left: 198px;
+    margin-bottom: 59px;
+   }
+.logo_border {
+    background: #FFFFFF;  
+    border-radius: 5px;
+    width: 166px;
+    height: 166px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo1, .logo2, .logo3 {
+    border-radius: 5px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    }
+.section5_border {
+    height: 919px;
+    width: 100%;
+    background: url(../../assets/images/leav_foto1.png) 100% 100%;
+    background-repeat: no-repeat;
+}
+footer {
+    background: #000000;
+    height: 443px;
+    width: 100%;
 }
