@@ -52,7 +52,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 2391px;
-    border: 1px solid black;
+    width: 100%;
+    /* border: 1px solid black; */
     
 }
 .section1 {
@@ -508,6 +509,19 @@ margin-top: 59px;
   -webkit-appearance: none;
   margin: 0;
 }
+.pic5:after {
+    
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: 684px;
+        right: 455px;
+        width: 10px;
+        height: 20px;
+        background: center/cover no-repeat url("../../assets/images/$.svg");
+        
+        
+}
 .logoButn {
     display: flex;
     justify-content: center;
@@ -824,6 +838,8 @@ color: #333B41;
             .menu_list li:nth-child(6) {
                  padding: 0;
             }
+            .menu_body {width: 940px;
+            }
             .bgPanda {
                 background: url(../../assets/images/panda_bg_sm.png) center/cover no-repeat;
             height: 390px;
@@ -872,6 +888,16 @@ color: #333B41;
                 display: none;
 
             }
+            .pic5:after {
+    
+                content: "";
+                position: absolute;
+                z-index: 2;
+                top: 657px;
+                right: 348px;
+                width: 10px;
+                height: 20px;
+            }
 
 
 
@@ -900,6 +926,9 @@ color: #333B41;
                 }
                 .header_content_container {
                     height: 34px;
+                    width: 100%;
+                    position: fixed;
+                    z-index: 1000;
                 }
                 .header_menu {    
                     width: 600px;
@@ -922,6 +951,9 @@ color: #333B41;
                 .lfb1 h1{
                     transform: translate(-38%, -65%);
 
+                }
+                .lfb1:hover {
+                    background: #000000;
                 }
                 .ib1 {
                     transform: translate(-470%, -12%);
@@ -1023,6 +1055,7 @@ color: #333B41;
                 .pic1 {
                     margin-bottom: 43px;
                     margin-left: 5px;
+                    padding: 0;
 
                 }
                 .pic1_2 img {
@@ -1035,6 +1068,19 @@ color: #333B41;
                     padding-left: 4px;
                     margin: 0 auto 32px;
                 }
+                .pic5:after {
+    
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    top: 670px;
+                    right: 222px;
+                    width: 10px;
+                    height: 20px;
+                    background: center/cover no-repeat url("../../assets/images/$.svg");
+                    
+                    
+            }
                 .pic6-button {
                     margin: 0px 10px 10px 8px;
                 }
@@ -1164,6 +1210,8 @@ color: #333B41;
                 .header_content_container {
                     height: 34px;
                     width: 100%;
+                    position: fixed;
+                    z-index: 1000;
                 }
                 .header_menu {    
                     width: 300px;
@@ -1182,6 +1230,9 @@ color: #333B41;
                 .lfb1 {
                     height: 34px;
                     scale: 0.62;
+                    background: #000000;
+                }
+                .lfb1:hover {
                     background: #000000;
                 }
                 .lfb1 h1{
@@ -1337,6 +1388,19 @@ color: #333B41;
                     padding: 10px 9px;
                     padding-left: 4px;
                 }
+                .pic5:after {
+    
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    top: 360px;
+                    right: 70px;
+                    width: 10px;
+                    height: 20px;
+                    background: center/cover no-repeat url("../../assets/images/$.svg");
+                    
+                    
+            }
                 .pic6-button {
                     margin: 0px 10px 10px 8px;
                 }
@@ -1467,6 +1531,9 @@ color: #333B41;
                     position: absolute;
                     top: 50%;
                     transform: translate(100%, -95%);
+                }
+                .lfb2:hover {
+                    background: #000000;
                 }
                 .footer_it3 {
                     padding: 0;
