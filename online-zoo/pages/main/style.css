@@ -40,7 +40,7 @@ a:active, a:hover {
     display: flex;
     flex-direction: column;
     height: 4975px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
 }
 body {
@@ -673,7 +673,7 @@ padding: 16px 73px;
     align-items: center;
   }
     .logo3 .logo_border img:nth-child(1) {
-        margin-top: 44px;
+        margin-top: 0;
     }
 .logo1, .logo2, .logo3 {
     border-radius: 5px;
@@ -1095,6 +1095,9 @@ color: #FFFFFF;
         .menu_list {
                 width: 794px;
         }
+        .menu_body {
+            width: 940px;
+        }
         .menu_list li {
             padding: 0 48px 0 0;
         }
@@ -1104,19 +1107,23 @@ color: #FFFFFF;
         .ellipse {
             width: 367px;
             height: 367px;
-            margin: 68px 256px 0 0;
+            margin: 68px 146px 0 0;
         }
         .whatch {
             margin-top: 50px;
-            transform: translate(-23%, -75%);
+            transform: translate(-1%, -76%);
             font-size: 8.5rem;
         }
         .bgPanda {
             height: 584px;
             background: url(../../assets/images/Giant\ Panda\ SmallDesk.png) center/cover no-repeat;
         }
+        .bgPanda_img {
+            width: 940px;
+            position: relative;
+        }
         .bgPanda_img a {
-            margin: 46px 215px 0 0;
+            margin: 48px 104px 0 0;
         }
         .section2 {
             width: 940px;
@@ -1314,6 +1321,8 @@ color: #FFFFFF;
             }
             .header_content_container {
                 height: 34px;
+                position: fixed;
+                z-index: 1000;
             }
             .header_menu {    
                 width: 600px;
@@ -1331,6 +1340,9 @@ color: #FFFFFF;
             .lfb1 {
                 height: 34px;
                 scale: 0.62;
+                background: #000000;
+            }
+            .lfb1:hover {
                 background: #000000;
             }
             .lfb1 h1{
@@ -1583,6 +1595,28 @@ color: #FFFFFF;
             .logoButn {
                 margin-left: 16px;
             }
+            .logo1::after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 330px;
+            right: 390px;
+            width: 89px;
+            height: 29px;
+            background: center/cover no-repeat url("../../assets/images/arrow_green_svg.svg");
+            
+            }
+            .logo2::after {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                top: 330px;
+                right: 190px;
+                width: 89px;
+                height: 29px;
+                background: center/cover no-repeat url("../../assets/images/arrow_green_svg.svg");
+                
+                }
             .section5 {
                 height: 490px;
                 width: 600px;
@@ -1781,7 +1815,8 @@ color: #FFFFFF;
                 height: 4271px;
             }
             .header_content_container {
-                
+                position: fixed;
+                z-index: 1000;
                 height: 34px;
                 width: 100%;
             }
@@ -1802,6 +1837,9 @@ color: #FFFFFF;
             .lfb1 {
                 height: 34px;
                 scale: 0.62;
+                background: #000000;
+            }
+            .lfb1:hover {
                 background: #000000;
             }
             .lfb1 h1{
@@ -2110,7 +2148,7 @@ color: #FFFFFF;
             }
             .section5_border {
                 height: 580px;
-                background: url(../../assets/images/leav_foto_sm.png) 100% 100%;
+                background: url(../../assets/images/leav_foto_mob.png) 100% 106%;
             background-repeat: no-repeat;
             }
             .section5 h3 {
@@ -2228,6 +2266,9 @@ color: #FFFFFF;
                 width: 100%;
                 height: 100%;
                 background-color: #000000;
+            }
+            .lfb2:hover {
+                background: #000000;
             }
             .lp2 {
                 width: 128px;
