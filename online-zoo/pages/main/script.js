@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', ()=> {
-alert("Что успел( Завтра доделаю)")
+console.log("Спасибо:)")
     // --- Burger-menu ---
     
     const menu = document.querySelector('.header_burger');
@@ -129,9 +129,11 @@ function prevSlide () {
     
       //---Pop up---
      
+      
+      const Comments = document.querySelectorAll('.test_card')
       const Popup = document.querySelector('.popup')
-      const Card = document.querySelector('.popup__card')
-      const PopupClose = document.querySelector('.popup__close');
+    const Card = document.querySelector('.popup__card')
+    const PopupClose = document.querySelector('.popup__close');
     
     
       Comments.forEach ((item, index) => {
