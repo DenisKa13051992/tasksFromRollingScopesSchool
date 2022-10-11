@@ -2620,7 +2620,7 @@ color: #FFFFFF;
             max-width: 265.5px;
             pointer-events: all;
         }  
-        .popup__card .comments__card-container {
+        .popup__card .test_card {
               display: block !important;
               height: 391px !important;
               border-radius: 20px;
