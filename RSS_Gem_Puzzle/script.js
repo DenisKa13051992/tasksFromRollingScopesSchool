@@ -1,5 +1,5 @@
 'use strict'
-
+alert('Если моооожно, дайте еще 24 часа после дедлайна) Немного не успел')
 const wrapper = document.createElement('div');
 wrapper.className = 'wrapper'
 const body = document.querySelector('.body');
