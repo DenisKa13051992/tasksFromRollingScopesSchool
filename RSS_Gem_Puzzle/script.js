@@ -135,7 +135,7 @@ function move(index, typeGame){
     
  function mix(typeGame){
     let numbers = [... Array(typeGame*typeGame - 1).keys()]
-    // .sort(() => Math.random() - 0.5)
+    .sort(() => Math.random() - 0.5)
     for (let i=1;i<=(typeGame*typeGame - 1);i++){
     let cell = document.createElement('div');
     let value = numbers[i - 1] + 1;
