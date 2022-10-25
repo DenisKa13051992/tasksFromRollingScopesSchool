@@ -21,12 +21,15 @@ shuff_but.innerHTML = 'Shuffle and start'
 const save_but = document.createElement('button');
 div_but.append(save_but)
 save_but.innerHTML = 'Save'
+save_but.addEventListener('click', () => {audioB()})
 const load_but = document.createElement('button');
 div_but.append(load_but)
 load_but.innerHTML = 'Load'
+load_but.addEventListener('click', () => {audioB()})
 const result_but = document.createElement('button');
 div_but.append(result_but)
 result_but.innerHTML = 'Result'
+result_but.addEventListener('click', () => {audioB()})
 const sound_but = document.createElement('button');
 div_but.append(sound_but)
 sound_but.innerHTML = 'Sound'
@@ -260,6 +263,7 @@ sound_but.addEventListener('click', () => {
 
     if (play) {
         sound_but.innerHTML = 'Sound';
+        audioB ()
     } else {
         sound_but.innerHTML = 'Silence';
     }
