@@ -140,13 +140,20 @@ function move(index, typeGame){
     let numbers = [... Array(typeGame*typeGame - 1).keys()]
     .sort(() => Math.random() - 0.5);
     let checkarr = 0
-    for (let j=0;j<numbers.length;j++){
-    if (numbers[j+1]<numbers[j]){checkarr += 1}
+    for (let j=0;j<numbers.length-1;j++){
+        for (let k=1;k<numbers.length-j;k++)
+    if (numbers[j+k]<numbers[j]){checkarr += 1}
     }
+    
     checkarr += start
-    if (checkarr%2!==0){
+    
+    if (typeGame%2!==0){if (checkarr%2==0){
         return mix(typeGame)
-    }
+    }}
+    else {if (checkarr%2!==0){
+        return mix(typeGame)
+    }}
+    
 
     for (let i=0;i<=(typeGame*typeGame - 2);i++){
     let cell = document.createElement('div');
