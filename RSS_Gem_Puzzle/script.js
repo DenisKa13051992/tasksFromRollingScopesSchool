@@ -1,5 +1,5 @@
 'use strict'
-alert('Если моооожно, дайте еще 24 часа после дедлайна) Немного не успел')
+console.log('Спасибо:)')
 const wrapper = document.createElement('div');
 wrapper.className = 'wrapper'
 const body = document.querySelector('.body');
@@ -93,14 +93,14 @@ eight_but.className = '8'
 eight_but.addEventListener('click', () => {changeGame(8), audioB()})
 
 
-
+let start = 4
 
 const field = document.querySelector('.table');
 const cellsize = 100;
 let empty = {
-    value: 0,
-    top: 0,
-    left: 0
+    value: start*start,
+    top: start-1,
+    left: start-1
 }
 const cells = [];
 cells.push(empty)
@@ -127,7 +127,7 @@ function move(index, typeGame){
         cell.left = emptyLeft
         cell.top = emptyTop
         const won = cells.every(cell => {
-            return cell.value === cell.top * typeGame + cell.left})
+            return cell.value-1 === cell.top * typeGame + cell.left})
         if (won){showWon()}
 
 }
@@ -135,13 +135,22 @@ function move(index, typeGame){
     
  function mix(typeGame){
     let numbers = [... Array(typeGame*typeGame - 1).keys()]
-    .sort(() => Math.random() - 0.5)
-    for (let i=1;i<=(typeGame*typeGame - 1);i++){
+    .sort(() => Math.random() - 0.5);
+    let checkarr = 0
+    for (let j=0;j<numbers.length;j++){
+    if (numbers[j+1]<numbers[j]){checkarr += 1}
+    }
+    checkarr += start
+    if (checkarr%2!==0){
+        return mix(typeGame)
+    }
+
+    for (let i=0;i<=(typeGame*typeGame - 2);i++){
     let cell = document.createElement('div');
-    let value = numbers[i - 1] + 1;
+    let value = numbers[i] + 1;
     cell.className = 'cell'
     cell.id = i;
-    cell.innerHTML = numbers[i - 1] + 1;
+    cell.innerHTML = numbers[i] + 1;
     
     let left = i % typeGame
     let top = (i-left) / typeGame
@@ -152,10 +161,10 @@ function move(index, typeGame){
         top: top,
         element: cell
     }
-   cells[0] = {
-        value: 0,
-        top: 0,
-        left: 0
+   cells[typeGame*typeGame - 1] = {
+    value: start*start,
+    top: start-1,
+    left: start-1
     }
     
     
@@ -179,33 +188,39 @@ function move(index, typeGame){
     
 }}
 
-let start = 4
 
 mix(start)
+
 shuff_but.addEventListener('click', () => {
     document.querySelector('table').innerHTML = "";
     movesStep = -1
     changeMoves()
     audioB()
-    empty.left = 0
-    empty.top = 0
+    empty.left = start - 1
+    empty.top = start - 1
     times = 0;
     if (!startTime) {startTime = true};
     document.querySelector('.time').innerHTML = `Time: 00:00`
     mix(start)})
 
 function changeGame (game){
-    document.querySelector('table').innerHTML = "";
-        empty.left = 0
-        empty.top = 0
+        document.querySelector('table').innerHTML = "";
+        start = game
+        empty.left = start - 1
+        empty.top = start - 1
         movesStep = -1
         changeMoves()
         times = 0;
         if (!startTime) {startTime = true};
         document.querySelector('.time').innerHTML = `Time: 00:00`
-        cells.splice(1, cells.length-2)
+        cells[start*start - 1] = {
+            value: start*start,
+            top: start-1,
+            left: start-1
+            }
+            cells.splice(start*start, cells.length-(start*start))
         mix(game)
-        start = game
+        
 
 }
 
