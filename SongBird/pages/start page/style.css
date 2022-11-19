@@ -1,0 +1,205 @@
+html {
+  margin: 0 auto;
+  max-width: 100%;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+p, body {
+margin: 0;
+padding: 0;
+}
+
+button, select {
+  text-transform: none;
+  border: none;
+}
+
+input {
+    line-height: normal;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+a, a:active, a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+
+body {
+width: 100%;
+/* height: 100vh; */
+background-image: url(../../assets/images/backgrImg3.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.wrapper-container {
+max-width: 1300px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-left: 20px;
+margin-right: 20px;
+}
+
+.header {
+width: 100%;
+margin-bottom: 10px;
+}
+
+.title-img {
+  width: 60px;
+  height: 60px;
+}
+
+.title-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.title-score {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-end;
+width: 100%;
+padding: 10px 0 10px;
+}
+
+.score {
+font-size: 18px;
+color: azure;
+}
+
+.navigation {
+width: 100%;
+display: grid;
+grid-template-areas: 
+"but1 but2" ;
+}
+
+.button {
+background-color: darkviolet;
+font-size: 16px;
+color: azure;
+border-radius: 5px;
+border: 1px solid black;
+box-sizing: border-box;
+text-align: center;
+}
+
+.button:hover {
+  background-color: rgb(74, 0, 211);
+}
+
+.but1 {
+grid-area: but1;
+}
+
+.but2 {
+grid-area: but2;
+}
+
+.main {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.start-div {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.start-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.start-info {
+  width: 100%;
+  text-align: center;
+}
+
+.button-start {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  color: azure;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  align-items: center;
+}
+
+.footer {
+width: 100%;
+margin-top: 40px;
+margin-bottom: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.footer a {
+word-wrap: break-word;
+font-family: 'Roboto', sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+color: azure;
+text-align: left;
+
+}
+
+.footer img {
+margin: 0 10px;
+}
+
+.me img {
+  max-width: 10%;
+  min-width: 30px;
+}
+
+.rsschool img {
+  max-width: 10%;
+  min-width: 60px;
+}
+
+.me {
+text-align: right;
+}
+
+.rsschool {
+  margin-top: 3px;
+}
+
+@media (max-width: 550px) {
+  
+  .button {
+    background-color: darkviolet;
+    font-size: 17.5px;
+  }
+
+  .footer a {
+    font-size: 14px;
+  }
+
+}

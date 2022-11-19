@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songbird</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+      <div class="wrapper-container">
+        <header class="header">
+          <div class="title-container">
+            <div class="title-score">
+              <p class="title"><img src="../../assets/images/Logo-header.png" alt="songbird" class="title-img"></p>
+              <p class="score">Score: 0</p>
+            </div>
+            <div class="navigation">
+              <button class="button but1">Разминка</button>
+              <button class="button but2">Воробьиные</button>
+              <button class="button but3">Лесные птицы</button>
+              <button class="button but4">Певчие птицы</button>
+              <button class="button but5">Хищные птицы</button>
+              <button class="button but6">Морские птицы</button>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <div class="random-bird">
+            <div class="random-pic"><img src="../../assets/images/unknownbird.jpg" alt="unknownbird" class="random-img"></div>
+            <div class="random-sound">
+              <div class="random-name"><p>********</p></div>
+              <div class="random-player">
+                <div class="audio-player"></div>
+                <div class="controls">
+                  <div class="playback-button">
+                    <svg viewBox="-200 0 1200 1000">
+                      <path fill="#00bc8c" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
+
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="timebar">
+                    <div class="timebar-bar"></div>
+                    <div class="timebar-circle"></div>
+                    <div class="timebar-time-info">
+                      <div>00:00</div>
+                      <div>00:12</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="game">
+            <div class="options">
+              <ul class="list-group">
+                <li class="list-item"><span class="circle"></span>Ворон</li>
+                <li class="list-item"><span class="circle"></span>Журавль</li>
+                <li class="list-item"><span class="circle"></span>Ласточка</li>
+                <li class="list-item"><span class="circle"></span>Козодой</li>
+                <li class="list-item"><span class="circle"></span>Кукушка</li>
+                <li class="list-item"><span class="circle"></span>Синица</li>
+              </ul>
+            </div>
+            <div class="details">
+              <div class="card-start"><p>Прослушайте плеер и выберите вариант ответа из списка</p></div>
+              <div class="card-body">
+                <img class="random-img" src="https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg" alt="Козодой">
+                <ul class="list-group list-group-flush">
+                  <li class="list-item"><p>Козодой</p></li>
+                  <li class="list-item"><span>Caprimulgus europaeus</span></li>
+                  <li class="list-item">
+                    <div class="audio-player"><audio src="https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3" hidden=""></audio>
+                      <div class="controls">
+                        <div class="playback-button"><svg viewBox="-200 0 1200 1000"><path fill="#00bc8c" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z"></path></svg>
+                        </div>
+                        <div class="timebar">
+                          <div class="timebar-bar">
+                          </div>
+                          <div class="timebar-circle" style="left: 0%;"></div>
+                          <div class="timebar-time-info">
+                            <div>00:00</div>
+                            <div>02:03</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-info"><p>Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются. </p></div>
+            </div>
+            <div class="next-div"><button class="button next-but">Next level</button></div>
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="rsschool">
+            <div><a href="https://rs.school/js/">©RSSchool JavaScript/Front-end 2022Q3<br><img src="../../assets/images/rs_school_js.svg" alt="rsschool"></a></div>
+          </div>
+          <div class="me">
+            <a href="https://github.com/DenisKa13051992">Denis Karnachenko 2022<br><img src="../../assets/images/github.png" alt="github"></a>
+          </div>
+        </footer>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
