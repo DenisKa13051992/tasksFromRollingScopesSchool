@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songbird</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../assets/images/Logo-header.png">
 </head>
 <body>
   <div class="wrapper">
@@ -34,25 +38,21 @@
           <div class="random-bird">
             <div class="random-pic"><img src="../../assets/images/unknownbird.jpg" alt="unknownbird" class="random-img"></div>
             <div class="random-sound">
-              <div class="random-name"><p>********</p></div>
+              <div class="random-name"><p class="random-name-item">*******</p></div>
               <div class="random-player">
-                <div class="audio-player"></div>
                 <div class="controls">
                   <div class="playback-button">
-                    <svg viewBox="-200 0 1200 1000">
-                      <path fill="#00bc8c" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
-
-                      </path>
-                    </svg>
+                    <img src="../../assets/images/play-pause-sound.png" alt="play/pause sound" class="play-pause-sound">
                   </div>
                   <div class="timebar">
-                    <div class="timebar-bar"></div>
-                    <div class="timebar-circle"></div>
-                    <div class="timebar-time-info">
-                      <div>00:00</div>
-                      <div>00:12</div>
+                    <div class="audio_play">
+                      <input type="range" value="0" min="0" max="100" step="1" class="audio-progress">
                     </div>
                   </div>
+                </div>
+                <div class="audio_volume">
+                  <div class="audio_volume_icon"><img class="audio_volume_icon-img" src="../../assets/images/sound-logo.png" alt="sound on/off"></div>
+                  <input type="range" value="40" min="0" max="100" step="1" class="timebar-volume">
                 </div>
               </div>
             </div>
@@ -78,16 +78,11 @@
                   <li class="list-item">
                     <div class="audio-player"><audio src="https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3" hidden=""></audio>
                       <div class="controls">
-                        <div class="playback-button"><svg viewBox="-200 0 1200 1000"><path fill="#00bc8c" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z"></path></svg>
+                        <div class="playback-button-card"><img src="../../assets/images/play-pause-sound.png" alt="play/pause sound" class="play-pause-sound">
                         </div>
                         <div class="timebar">
-                          <div class="timebar-bar">
-                          </div>
-                          <div class="timebar-circle" style="left: 0%;"></div>
-                          <div class="timebar-time-info">
-                            <div>00:00</div>
-                            <div>02:03</div>
-                          </div>
+                          <input type="range" value="40" min="0" max="100" step="1" class="timebar-volume-card">
+                          
                         </div>
                       </div>
                     </div>

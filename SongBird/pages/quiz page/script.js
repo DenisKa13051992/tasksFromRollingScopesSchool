@@ -309,6 +309,13 @@ let answerTrue = false;
 let openName = true;
 let randomWinNumber = randomNumber(0,5);
 let gameFun;
+let audioCor = new Audio('../../assets/sounds/correct.mp3')
+let audioIncor = new Audio('../../assets/sounds/incorrect.mp3')
+let sound1 = new Audio()
+let sound2 = new Audio()
+let volumeMuteIcon = document.querySelector('.audio_volume_icon')
+let playerVolume = document.querySelector('.timebar-volume')
+let valueNow = 0
 
 const circles = document.querySelectorAll('.circle');
 const answers = document.querySelectorAll('.answer');
@@ -327,8 +334,13 @@ const playAgain = document.querySelector('.play-again');
 const victory = document.querySelector('.victory');
 const wrapperContainer = document.querySelector('.wrapper-container');
 const congr = document.querySelector('.congr');
-let audioCor = new Audio('../../assets/sounds/correct.mp3')
-let audioIncor = new Audio('../../assets/sounds/incorrect.mp3')
+const playBackButton = document.querySelector('.playback-button');
+const playBackButtonCard = document.querySelector('.playback-button-card');
+const randomNameItem = document.querySelector('.random-name-item')
+const audioVolumeIconImg = document.querySelector('.audio_volume_icon-img')
+let progress = document.querySelector('.audio-progress')
+let audioPlayerVolumeCard = document.querySelector('.timebar-volume-card')
+
 
 //answer part
 createAnswerVariants()
@@ -348,13 +360,13 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
     listItemVariants[i].addEventListener('click', function game(){
       if (openName) {
         openDetails()
-      }
-            
+      }            
       if (answerTrue) {
         openDetailsInfo(i)
       } else {
         if (i === randomWinNumber){
-          openDetailsInfo(i)
+          openDetailsInfo(i);
+          randomNameItem.textContent = birdsData[answerTime][i].name;
           circles[i].style.background = 'green';
           answers[i].style.color = 'green';
           audioCor.play();
@@ -398,10 +410,14 @@ nextBut.addEventListener('click', ()=>{
     }
     closeDetails()
     answerTime++
-    gameFun()
+    
     createAnswerVariants()
     answerTrue = false;
     randomWinNumber = randomNumber(0,5);
+    sound1.pause()
+    sound2.pause()
+    createsound1(randomWinNumber)
+    createsound2(randomWinNumber)
     clearStyles()
   
   }
@@ -415,16 +431,152 @@ playAgain.addEventListener('click', ()=>{
   wrapperContainer.style.display = 'flex';
   clearStyles()
   answerTime = 0;
-  scoreItem = 5;
+  progresseItem = 5;
   scoreItemFin = 0;
   answerTrue = false;
   openName = true;
   randomWinNumber = randomNumber(0,5);
+  sound1.pause()
+  sound2.pause()
+  ProgressDel()
+  createsound1(randomWinNumber)
+  createsound2(randomWinNumber)
   closeDetails()
   createAnswerVariants()
   score.textContent = `Score: ${scoreItemFin}`;
+  nextBut.textContent = 'Next level'
   nextBut.style.background = 'gray';
 })
+
+// Sounds
+
+
+// on/off
+
+volumeMuteIcon.addEventListener('click', function () {
+  volumeMuteIcon.classList.toggle('audio_mute_icon')
+  volumeMuteIcon.classList.toggle('audio_volume_icon')
+  if (volumeMuteIcon.classList.contains('audio_mute_icon')) {
+    valueNow = playerVolume.value
+    sound1.volume = 0
+    playerVolume.value = 0
+    playerVolume.style.background = `#a1aab3`
+    audioVolumeIconImg.src = ('../../assets/images/soundOff-logo.png')
+  } else {
+    playerVolume.value = valueNow
+    sound1.volume = valueNow / 100
+    playerVolume.style.background = `linear-gradient(to right, #9400d3 0%, #9400d3 ${valueNow}%, #a1aab3 ${valueNow}%, #a1aab3 100%)`
+    valueNow = 0
+    audioVolumeIconImg.src = ('../../assets/images/sound-logo.png')
+  }
+})
+
+playerVolume.addEventListener('input', function () {
+  if (volumeMuteIcon.classList.contains('audio_mute_icon')) {
+    volumeMuteIcon.classList.remove('audio_mute_icon')
+    volumeMuteIcon.classList.add('audio_volume_icon')
+  }
+  let valueClick = this.value
+  this.style.background = `linear-gradient(to right, #9400d3 0%, #9400d3 ${valueClick}%, #a1aab3 ${valueClick}%, #a1aab3 100%)`
+  sound1.volume = valueClick / 100
+  if (valueClick === '0') {
+    volumeMuteIcon.classList.remove('audio_volume_icon')
+    volumeMuteIcon.classList.add('audio_mute_icon')
+  }
+})
+
+// player
+
+createsound1(randomWinNumber)
+createsound2(randomWinNumber)
+
+function createsound1(i) {
+  let volumeNew = sound1.volume
+  sound1 = new Audio(birdsData[answerTime][i].audio)
+  sound1.volume = volumeNew
+  sound1.addEventListener('timeupdate', function () {
+    progress.value = (sound1.currentTime * 100) / sound1.duration
+    let progressNewItem = progress.value
+    progress.style.background = `linear-gradient(to right, #9400d3 0%, #9400d3 ${progressNewItem}%, #a1aab3 ${progressNewItem}%, #a1aab3 100%)`
+  })
+  sound1.addEventListener('ended', function () {
+    playBackButton.classList.remove('audio-pause')
+    playBackButton.classList.add('audio-play')
+    ProgressDel()
+  })
+}
+
+playBackButton.addEventListener('click', function () {
+  playBackButton.classList.toggle('audio-pause')
+  sound2.pause()
+  sound1.play()
+  playBackButtonCard.classList.remove('card-pause')
+  playBackButtonCard.classList.add('card-play')
+  setTimeout(resetaudioPlayerVolumeCard, 100)
+  if (playBackButton.classList.contains('audio-pause')) {
+    sound1.play()
+  } else {
+    sound1.pause()
+  }
+})
+
+progress.addEventListener('input', function () {
+  let valueClick2 = this.value
+  sound1.currentTime = (sound1.duration / 100) * valueClick2
+  this.style.background = `linear-gradient(to right, #9400d3 0%, #9400d3 ${valueClick2}%, #a1aab3 ${valueClick2}%, #a1aab3 100%)`
+})
+
+function ProgressDel() {
+  sound1.currentTime = 0
+  progress.style.background = `linear-gradient(to right, #a1aab3 0%, #a1aab3 100%)`
+}
+
+// player card
+
+function createsound2(i) {
+  sound2 = new Audio(birdsData[answerTime][i].audio)
+  sound2.addEventListener('timeupdate', function () {
+    audioPlayerVolumeCard.value = (sound2.currentTime * 100) / sound2.duration
+    let progressNewItem = audioPlayerVolumeCard.value
+    audioPlayerVolumeCard.style.background = `linear-gradient(to right, #9400d3 0%, #9400d3 ${progressNewItem}%, #a1aab3 ${progressNewItem}%, #a1aab3 100%)`
+  })
+  sound2.addEventListener('ended', function () {
+    playBackButtonCard.classList.remove('card-pause')
+    playBackButtonCard.classList.add('card-play')
+    audioPlayerVolumeCard.style.background = `linear-gradient(to right, #a1aab3 0%, #a1aab3 100%)`
+  })
+}
+
+playBackButtonCard.addEventListener('click', function () {
+  playBackButtonCard.classList.toggle('card-pause')
+  sound1.pause()
+  sound2.play()
+  playBackButton.classList.remove('audio-pause')
+  playBackButton.classList.add('audio-play')
+  setTimeout(ProgressDel, 100)
+  if (playBackButtonCard.classList.contains('card-pause')) {
+    sound2.play()
+  } else {
+    sound2.pause()
+  }
+})
+
+audioPlayerVolumeCard.addEventListener('input', function () {
+  let progressNewItem = this.value
+  sound2.currentTime = (sound2.duration / 100) * progressNewItem
+  this.style.background = `linear-gradient(to right, #9400d3 0%, #9400d3 ${progressNewItem}%, #a1aab3 ${progressNewItem}%, #a1aab3 100%)`
+})
+
+function resetaudioPlayerVolumeCard() {
+  sound2.currentTime = 0
+  audioPlayerVolumeCard.style.background = `linear-gradient(to right, #a1aab3 0%, #a1aab3 100%)`
+}
+
+
+
+
+
+
 
 
 // intermediate functions
@@ -450,6 +602,7 @@ function openDetailsInfo(choice) {
 
 function clearStyles(){
   buttons[answerTime-1].style.background = 'darkviolet';
+  randomNameItem.textContent = '*******';
   
     buttons[answerTime].style.background = 'blue';
   
