@@ -127,6 +127,11 @@ body {
   text-align: center;
   }
 
+  .next-but {
+    background: gray;
+    cursor: pointer;
+  }
+
 .play-again {
   width: 100%;
   font-size: 20px;
@@ -139,7 +144,7 @@ body {
   cursor: pointer;
 }
   
-.next-but:hover, .play-again:hover {
+.play-again:hover {
     background-color: rgb(74, 0, 211);
 }
 

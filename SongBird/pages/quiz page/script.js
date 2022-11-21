@@ -327,6 +327,8 @@ const playAgain = document.querySelector('.play-again');
 const victory = document.querySelector('.victory');
 const wrapperContainer = document.querySelector('.wrapper-container');
 const congr = document.querySelector('.congr');
+let audioCor = new Audio('../../assets/sounds/correct.mp3')
+let audioIncor = new Audio('../../assets/sounds/incorrect.mp3')
 
 //answer part
 createAnswerVariants()
@@ -355,16 +357,20 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
           openDetailsInfo(i)
           circles[i].style.background = 'green';
           answers[i].style.color = 'green';
+          audioCor.play();
           answerTrue = true;
           randomImg[0].src = birdsData[answerTime][i].image;
           if (scoreItem>0) {scoreItemFin += scoreItem};
           score.textContent = `Score: ${scoreItemFin}`;
           scoreItem = 5;
+          nextBut.style.background = 'blue';
         } else {
           circles[i].style.background = 'red';
           answers[i].style.color = 'red';
+          audioIncor.play();
           openDetailsInfo(i);
           --scoreItem
+          
         }
   
       }
@@ -379,11 +385,12 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
 
 
 nextBut.addEventListener('click', ()=>{
-  
+  nextBut.style.background = 'gray';
   if (answerTime===5){
     victory.style.display = 'flex';
     wrapperContainer.style.display = 'none';
-    congr.textContent = `Congratulations! ${scoreItemFin}/30`
+    congr.textContent = `Congratulations! ${scoreItemFin}/30`;
+    answerTime++
   } 
   else if (answerTrue){
     if (answerTime===4){
@@ -406,6 +413,7 @@ nextBut.addEventListener('click', ()=>{
 playAgain.addEventListener('click', ()=>{
   victory.style.display = 'none';
   wrapperContainer.style.display = 'flex';
+  clearStyles()
   answerTime = 0;
   scoreItem = 5;
   scoreItemFin = 0;
@@ -413,10 +421,9 @@ playAgain.addEventListener('click', ()=>{
   openName = true;
   randomWinNumber = randomNumber(0,5);
   closeDetails()
-  gameFun()
   createAnswerVariants()
-  clearStyles()
-  
+  score.textContent = `Score: ${scoreItemFin}`;
+  nextBut.style.background = 'gray';
 })
 
 
