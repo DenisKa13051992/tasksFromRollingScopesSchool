@@ -135,7 +135,7 @@ body {
 .play-again {
   width: 100%;
   font-size: 20px;
-  background: darkviolet;
+  background: #9400d3;
   color: azure;
   border-radius: 5px;
   border: 1px solid black;
@@ -202,7 +202,7 @@ body {
 }
 
 .random-name {
-  font-size: 30px;
+  font-size: 20px;
   color: azure;
   height: 55px;
   display: flex;
@@ -214,10 +214,6 @@ body {
   border-radius: 15px;
 }
 
-.playback-button {
-  width: 40px;
-  height: 40px;
-}
 
 .controls {
   display: flex;
@@ -225,20 +221,9 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-.playback-button svg {
-  -webkit-transition: .2s;
-  transition: .2s;
-  width: 18px;
-  height: 18px;
-  color: #54b1c1;
-}
 
-svg {
-  overflow: hidden;
-  vertical-align: middle;
-}
 
-.playback-button {
+.playback-button, .playback-button-card {
   -webkit-transition: .2s;
   transition: .2s;
   width: 40px;
@@ -247,12 +232,89 @@ svg {
   justify-content: center;
   border-radius: 50%;
   margin-right: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
+  margin-top: 6px;
   cursor: pointer;
-}
-.playback-button {
   display: flex;
   align-items: center;
+}
+
+.play-pause-sound {
+  width: 40px;
+  height: 40px;
+}
+
+.audio_volume_icon img {
+  width: 40px;
+  height: 40px;
+  margin-right: 25px;
+}
+
+.audio_volume {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.audio_volume_icon {
+  cursor: pointer;
+}
+
+.audio_mute_icon img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+.timebar-volume, .timebar-volume-card {
+  background: linear-gradient(
+    to right,
+    #9400d3 40%,
+    #a1aab3 0%,
+    #a1aab3 100%
+  );
+  height: 10px;
+  width: 60%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.timebar-volume::-webkit-slider-thumb,
+.audio-progress::-webkit-slider-thumb,
+.timebar-volume-card::-webkit-slider-thumb {
+  width: 1px;
+  height: 1px;
+  -webkit-appearance: none;
+  background: #a1aab3;
+}
+
+.audio_player_controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  height: 40%;
+}
+
+.audio_play {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.audio-progress {
+  background: linear-gradient(to right, #a1aab3 0%, #a1aab3 100%);
+  height: 10px;
+  width: 90%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
 
 .timebar {
@@ -261,32 +323,14 @@ svg {
   position: relative;
 }
 
-.timebar-bar {
-  height: 4px;
-  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 0%, rgb(115, 115, 115) 0%, rgb(115, 115, 115) 100%);
-}
 
-.timebar-time-info {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  font-size: 14px;
-  color: azure;
-  font-weight: 400;
-}
-
-.timebar-circle {
-  background-color: grey;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0%;
-  -webkit-transform: translate(-50%,calc(-50% + 2px));
-  transform: translate(-50%,calc(-50% + 2px));
-  box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);
-  cursor: pointer;
+.audio_player_controls {
+  background: linear-gradient(
+    to right,
+    #9400d3 40%,
+    #a1aab3 0%,
+    #a1aab3 100%
+  );
 }
 
 .list-group {
@@ -326,7 +370,6 @@ svg {
 
 .options {
   grid-area: options;
-  margin-right: 5px;
   margin-top: 10px;
   background: rgba(48, 48, 48, .5);
   border-radius: 15px;
@@ -336,19 +379,18 @@ svg {
   grid-area: details;
   background: rgba(48, 48, 48, .6);
   margin-top: 10px;
-  margin-left: 5px;
   position: relative;
   border-radius: 15px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .card-start {
   font-size: 16px;
   color: azure;
-  height: 55px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -392,7 +434,7 @@ svg {
 
 .next-div {
   grid-area: next-div;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .next-but {
@@ -452,6 +494,10 @@ svg {
     margin-left: 20px;
     margin-right: 20px;
     }
+    .next-but {
+      background: gray;
+      cursor: pointer;
+    }
 }
 
 @media (max-width: 800px) {
@@ -469,6 +515,10 @@ svg {
     .victory {
       margin-left: 20px;
       margin-right: 20px;
+      }
+      .next-but {
+        background: gray;
+        cursor: pointer;
       }
 }
 
@@ -519,6 +569,15 @@ svg {
     font-size: 20px;
   }
 
+  .details {
+    height: 100%;
+  }
+
+.card-start p {
+    text-align: center;
+    
+  }
+
   .footer a {
     font-size: 14px;
   }
@@ -530,5 +589,13 @@ svg {
       margin-left: 20px;
       margin-right: 20px;
       }
+      .next-but {
+        background: gray;
+        cursor: pointer;
+      }
+      .but1 {
+        grid-area: but1;
+        background: rgb(74, 0, 211);
+    }
 
 }
