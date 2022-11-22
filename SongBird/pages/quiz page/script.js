@@ -365,6 +365,8 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
         openDetailsInfo(i)
       } else {
         if (i === randomWinNumber){
+          sound1.pause()
+          sound2.pause()
           openDetailsInfo(i);
           randomNameItem.textContent = birdsData[answerTime][i].name;
           circles[i].style.background = 'green';
