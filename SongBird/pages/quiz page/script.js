@@ -316,6 +316,7 @@ let sound2 = new Audio()
 let volumeMuteIcon = document.querySelector('.audio_volume_icon')
 let playerVolume = document.querySelector('.timebar-volume')
 let valueNow = 0
+let prevI = NaN
 
 const circles = document.querySelectorAll('.circle');
 const answers = document.querySelectorAll('.answer');
@@ -394,7 +395,10 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
           sound2.pause()
           playBackButtonCard.classList.remove('card-pause')
           createsound2(i)
-          --scoreItem
+          if (prevI !== i){
+            --scoreItem
+          }          
+          prevI = i;
           
         }
   
@@ -436,6 +440,7 @@ nextBut.addEventListener('click', ()=>{
     playBackButtonCard.classList.remove('card-pause')
     // createsound2(randomWinNumber)
     clearStyles()
+    prevI = NaN
   
   }
   
