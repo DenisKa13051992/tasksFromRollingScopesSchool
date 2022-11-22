@@ -365,11 +365,14 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
       if (answerTrue) {
         openDetailsInfo(i)
         sound2.pause()
+        playBackButtonCard.classList.remove('card-pause')
         createsound2(i)
       } else {
         if (i === randomWinNumber){
           sound1.pause()
+          playBackButton.classList.remove('audio-pause')
           sound2.pause()
+          playBackButtonCard.classList.remove('card-pause')
           createsound2(i)
           openDetailsInfo(i);
           randomNameItem.textContent = birdsData[answerTime][i].name;
@@ -389,6 +392,7 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
           audioIncor.play();
           openDetailsInfo(i);
           sound2.pause()
+          playBackButtonCard.classList.remove('card-pause')
           createsound2(i)
           --scoreItem
           
@@ -412,6 +416,8 @@ nextBut.addEventListener('click', ()=>{
     wrapperContainer.style.display = 'none';
     congr.textContent = `Congratulations! ${scoreItemFin}/30`;
     answerTime++
+    sound1.pause()
+    sound2.pause()
   } 
   else if (answerTrue){
     if (answerTime===4){
@@ -424,8 +430,10 @@ nextBut.addEventListener('click', ()=>{
     answerTrue = false;
     randomWinNumber = randomNumber(0,5);
     sound1.pause()
+    playBackButton.classList.remove('audio-pause')
     sound2.pause()
     createsound1(randomWinNumber)
+    playBackButtonCard.classList.remove('card-pause')
     // createsound2(randomWinNumber)
     clearStyles()
   
@@ -446,10 +454,12 @@ playAgain.addEventListener('click', ()=>{
   openName = true;
   randomWinNumber = randomNumber(0,5);
   sound1.pause()
+  playBackButton.classList.remove('audio-pause')
   sound2.pause()
   ProgressDel()
   createsound1(randomWinNumber)
   createsound2(randomWinNumber)
+  playBackButtonCard.classList.remove('card-pause')
   closeDetails()
   createAnswerVariants()
   score.textContent = `Score: ${scoreItemFin}`;
