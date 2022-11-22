@@ -358,15 +358,19 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
 
   for (let i=0;i<listItemVariants.length;i++){
     listItemVariants[i].addEventListener('click', function game(){
+      
       if (openName) {
         openDetails()
       }            
       if (answerTrue) {
         openDetailsInfo(i)
+        sound2.pause()
+        createsound2(i)
       } else {
         if (i === randomWinNumber){
           sound1.pause()
           sound2.pause()
+          createsound2(i)
           openDetailsInfo(i);
           randomNameItem.textContent = birdsData[answerTime][i].name;
           circles[i].style.background = 'green';
@@ -378,11 +382,14 @@ function randomNumber(a,b){return Math.floor(Math.random() * (b - a + 1)) + a
           score.textContent = `Score: ${scoreItemFin}`;
           scoreItem = 5;
           nextBut.style.background = 'blue';
+          
         } else {
           circles[i].style.background = 'red';
           answers[i].style.color = 'red';
           audioIncor.play();
           openDetailsInfo(i);
+          sound2.pause()
+          createsound2(i)
           --scoreItem
           
         }
@@ -419,7 +426,7 @@ nextBut.addEventListener('click', ()=>{
     sound1.pause()
     sound2.pause()
     createsound1(randomWinNumber)
-    createsound2(randomWinNumber)
+    // createsound2(randomWinNumber)
     clearStyles()
   
   }
@@ -490,7 +497,7 @@ playerVolume.addEventListener('input', function () {
 // player
 
 createsound1(randomWinNumber)
-createsound2(randomWinNumber)
+
 
 function createsound1(i) {
   let volumeNew = sound1.volume
