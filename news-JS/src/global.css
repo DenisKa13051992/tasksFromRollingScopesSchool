@@ -33,3 +33,44 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
+.myFooter {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.myFooter a {
+  word-wrap: break-word;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: azure;
+  text-align: left;
+}
+
+.myFooter img {
+  margin: 0 10px;
+}
+
+.me {
+  text-align: right;
+}
+
+.me img {
+  max-width: 10%;
+  min-width: 30px;
+}
+
+.rsschool {
+  margin-top: 3px;
+}
+
+.rsschool img {
+  max-width: 10%;
+  min-width: 60px;
+}

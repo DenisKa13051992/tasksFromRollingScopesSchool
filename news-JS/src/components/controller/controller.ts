@@ -1,9 +1,9 @@
 import AppLoader from './appLoader';
-import { controllerFunc, SourcesItem, NewsItem } from '../../types/index'
+import { controllerFunc, ArticleData, SourcesData } from '../../types/index'
 
 
 class AppController extends AppLoader {
-  getSources(callback: controllerFunc<SourcesItem>) {
+  getSources(callback: controllerFunc<SourcesData>) {
     super.getResp(
       {
         endpoint: 'sources',
@@ -12,7 +12,7 @@ class AppController extends AppLoader {
     );
   }
 
-  getNews(e: Event, callback: controllerFunc<NewsItem>) {
+  getNews(e: Event, callback: controllerFunc<ArticleData>) {
     let target = e.target as HTMLElement;
     const newsContainer = e.currentTarget as HTMLElement;
 
