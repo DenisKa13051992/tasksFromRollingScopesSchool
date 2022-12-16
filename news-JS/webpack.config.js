@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
 const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,21 +9,27 @@ const baseConfig = {
     entry: path.resolve(__dirname, './src/index'),
     mode: 'development',
     module: {
-        rules: [{ test: /\.ts$/i, use: 'ts-loader' },
+        rules: [
+            { test: /\.ts$/i, use: 'ts-loader' },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+              test: /\.(?:ico|gif|png|jpg|jpeg|svg|mp3)$/i,
+              type: 'asset/resource',
+            }, 
         ],
     },
     resolve: {
-      extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, '../dist'),
     },
-    plugins: [new EslingPlugin({ extensions: 'ts' }),
+    plugins: [
+        new EslingPlugin({ extensions: 'ts' }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
