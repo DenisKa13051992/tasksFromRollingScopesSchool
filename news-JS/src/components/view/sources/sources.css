@@ -32,3 +32,10 @@
     font-weight: 400;
     white-space: nowrap;
 }
+
+@media (max-width: 640px) {
+  .source__item {
+    font-size: 12px
+  }
+  
+}
