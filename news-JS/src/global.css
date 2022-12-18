@@ -40,6 +40,7 @@ footer .copyright:before {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-right: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -65,7 +66,7 @@ footer .copyright:before {
 
 .me img {
   max-width: 10%;
-  min-width: 30px;
+  min-width: 40px;
 }
 
 .rsschool {
@@ -74,7 +75,7 @@ footer .copyright:before {
 
 .rsschool img {
   max-width: 10%;
-  min-width: 60px;
+  min-width: 40px;
 }
 
 @media (max-width: 640px) {
