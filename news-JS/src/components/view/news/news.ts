@@ -10,33 +10,33 @@ class News {
 
         news.forEach((item, idx) => {
             if (newsItemTemp) {
-                const newsClone = newsItemTemp.content.cloneNode(true) as HTMLElement;
+                const newsClone = <HTMLElement>newsItemTemp.content.cloneNode(true);
 
-                if (idx % 2) (newsClone.querySelector('.news__item') as HTMLElement).classList.add('alt');
+                if (idx % 2) (<HTMLElement>newsClone.querySelector('.news__item')).classList.add('alt');
 
-                (newsClone.querySelector('.news__meta-photo') as HTMLElement).style.backgroundImage = `url(${
+                (<HTMLElement>newsClone.querySelector('.news__meta-photo')).style.backgroundImage = `url(${
                     item.urlToImage ||
                     'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.securitiesfinancetimes.com%2Fsecuritieslendingnews%2Ftechnologyarticle.php%3Farticle_id%3D225524%26navigationaction%3Dtechnologynews%26newssection%3Dtechnology&psig=AOvVaw0_PDOPAZYS_JX0TPi5f_MO&ust=1671353701436000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMDz4O-jgPwCFQAAAAAdAAAAABAR'
                 })`;
-                (newsClone.querySelector('.news__meta-author') as HTMLElement).textContent =
+                (<HTMLElement>newsClone.querySelector('.news__meta-author')).textContent =
                     item.author || item.source.name;
-                (newsClone.querySelector('.news__meta-date') as HTMLElement).textContent = item.publishedAt
+                (<HTMLElement>newsClone.querySelector('.news__meta-date')).textContent = item.publishedAt
                     .slice(0, 10)
                     .split('-')
                     .reverse()
                     .join('-');
 
-                (newsClone.querySelector('.news__description-title') as HTMLElement).textContent = item.title;
-                (newsClone.querySelector('.news__description-source') as HTMLElement).textContent = item.source.name;
-                (newsClone.querySelector('.news__description-content') as HTMLElement).textContent = item.description;
-                (newsClone.querySelector('.news__read-more a') as HTMLElement).setAttribute('href', item.url);
+                (<HTMLElement>newsClone.querySelector('.news__description-title')).textContent = item.title;
+                (<HTMLElement>newsClone.querySelector('.news__description-source')).textContent = item.source.name;
+                (<HTMLElement>newsClone.querySelector('.news__description-content')).textContent = item.description;
+                (<HTMLElement>newsClone.querySelector('.news__read-more a')).setAttribute('href', item.url);
 
                 fragment.append(newsClone);
             }
         });
 
-        (document.querySelector('.news') as HTMLElement).innerHTML = '';
-        (document.querySelector('.news') as HTMLElement).appendChild(fragment);
+        (<HTMLElement>document.querySelector('.news')).innerHTML = '';
+        (<HTMLElement>document.querySelector('.news')).appendChild(fragment);
     }
 }
 
