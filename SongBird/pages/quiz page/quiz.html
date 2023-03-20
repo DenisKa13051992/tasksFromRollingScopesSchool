@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songbird</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../../assets/images/Logo-header.png">
+</head>
+<body>
+  <div class="wrapper">
+      <div class="victory">
+        <p class="congr"></p>
+        <div class="again"><button class="play-again">Play again</button></div>
+      </div>
+      <div class="wrapper-container">
+        <header class="header">
+          <div class="title-container">
+            <div class="title-score">
+              <p class="title"><img src="../../assets/images/Logo-header.png" alt="songbird" class="title-img"></p>
+              <p class="score">Score: 0</p>
+            </div>
+            <div class="navigation">
+              <p class="button but1">Разминка</p>
+              <p class="button but2">Воробьиные</p>
+              <p class="button but3">Лесные птицы</p>
+              <p class="button but4">Певчие птицы</p>
+              <p class="button but5">Хищные птицы</p>
+              <p class="button but6">Морские птицы</p>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <div class="random-bird">
+            <div class="random-pic"><img src="../../assets/images/unknownbird.jpg" alt="unknownbird" class="random-img"></div>
+            <div class="random-sound">
+              <div class="random-name"><p class="random-name-item">*******</p></div>
+              <div class="random-player">
+                <div class="controls">
+                  <div class="playback-button">
+                    <img src="../../assets/images/play-pause-sound.png" alt="play/pause sound" class="play-pause-sound">
+                  </div>
+                  <div class="timebar">
+                    <div class="audio_play">
+                      <input type="range" value="0" min="0" max="100" step="1" class="audio-progress">
+                    </div>
+                  </div>
+                </div>
+                <div class="audio_volume">
+                  <div class="audio_volume_icon"><img class="audio_volume_icon-img" src="../../assets/images/sound-logo.png" alt="sound on/off"></div>
+                  <input type="range" value="40" min="0" max="100" step="1" class="timebar-volume">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="game">
+            <div class="options">
+              <ul class="list-group">
+                <li class="list-item list-item-variant"><span class="circle"></span><span class="answer">Ворон</span></li>
+                <li class="list-item list-item-variant"><span class="circle"></span><span class="answer">Ворон</span></li>
+                <li class="list-item list-item-variant"><span class="circle"></span><span class="answer">Ворон</span></li>
+                <li class="list-item list-item-variant"><span class="circle"></span><span class="answer">Ворон</span></li>
+                <li class="list-item list-item-variant"><span class="circle"></span><span class="answer">Ворон</span></li>
+                <li class="list-item list-item-variant"><span class="circle"></span><span class="answer">Ворон</span></li>
+              </ul>
+            </div>
+            <div class="details">
+              <div class="card-start"><p>Прослушайте плеер и выберите вариант ответа из списка</p></div>
+              <div class="card-body">
+                <img class="random-img" src="https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg" alt="Козодой">
+                <ul class="list-group list-group-flush">
+                  <li class="list-item list-item-card-name"><p>Козодой</p></li>
+                  <li class="list-item list-item-card-secondName"><span>Caprimulgus europaeus</span></li>
+                  <li class="list-item">
+                    <div class="audio-player"><audio src="https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3" hidden=""></audio>
+                      <div class="controls">
+                        <div class="playback-button-card"><img src="../../assets/images/play-pause-sound.png" alt="play/pause sound" class="play-pause-sound">
+                        </div>
+                        <div class="timebar">
+                          <input type="range" value="40" min="0" max="100" step="1" class="timebar-volume-card">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-info"><p class="card-info-descr">Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются. </p></div>
+            </div>
+            <div class="next-div"><button class="button next-but">Next level</button></div>
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="rsschool">
+            <div><a href="https://rs.school/js/">©RSSchool JavaScript/Front-end 2022Q3<br><img src="../../assets/images/rs_school_js.svg" alt="rsschool"></a></div>
+          </div>
+          <div class="me">
+            <a href="https://github.com/DenisKa13051992">Denis Karnachenko 2022<br><img src="../../assets/images/github.png" alt="github"></a>
+          </div>
+        </footer>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
