@@ -1,0 +1,91 @@
+body {
+    color: #fff;
+    background: #17181c;
+    font-family: sans-serif;
+}
+
+header {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .copyright {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+footer .copyright a {
+    color: #444;
+}
+footer .copyright a:hover {
+    color: #555;
+}
+footer .copyright:before {
+    content: '©';
+}
+
+.myFooter {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.myFooter a {
+  word-wrap: break-word;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: azure;
+  text-align: left;
+}
+
+.myFooter img {
+  margin: 0 10px;
+}
+
+.me {
+  text-align: right;
+}
+
+.me img {
+  max-width: 10%;
+  min-width: 40px;
+}
+
+.rsschool {
+  margin-top: 3px;
+}
+
+.rsschool img {
+  max-width: 10%;
+  min-width: 40px;
+}
+
+@media (max-width: 640px) {
+header h1 {
+  font-size: 32px;
+}
+.myFooter a {
+  font-size: 12px;
+}
+footer .copyright {
+  font-size: 12px;
+}
+}
